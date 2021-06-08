@@ -1,0 +1,30 @@
+local watermark = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
+ 
+watermark.Name = "watermark."
+watermark.Parent = game.CoreGui
+watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = watermark
+Frame.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Frame.BorderColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+Frame.Position = UDim2.new(0.0201944709, 0, 0.0703883395, 0)
+Frame.Size = UDim2.new(0, 214, 0, 17)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Position = UDim2.new(0.144112155, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 33, 0, 17)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "darkware | private"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextSize = 14
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.new(1, 0.0235294, 0.984314)
+Frame_2.BorderColor3 = Color3.new(1, 0.0235294, 0.984314)
+Frame_2.Position = UDim2.new(-0.00317001529, 0, -0.0472587198, 0)
+Frame_2.Size = UDim2.new(0, 214, 0, 3)
