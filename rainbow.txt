@@ -1,0 +1,22 @@
+local Color = Color3.fromHSV(tick() % 5 / 5, 1, 1)
+local GameLogic
+local Particle = require(game.ReplicatedFirst.ClientModules.Old.framework.particle)
+for I,V in pairs(getgc(true)) do
+    if type(V) == "table" then
+        if rawget(V, "gammo") then
+            GameLogic = V
+        end
+    end
+end
+local New = Particle.new
+Particle.new = function(Data)
+    if GameLogic and GameLogic.currentgun and Data.visualorigin == GameLogic.currentgun.barrel.Position then
+        Data.color = Color
+    end
+    return New(Data)
+end
+coroutine.wrap(function()
+    while true and wait() do
+        Color = Color3.fromHSV(tick() % 5 / 5, 1, 1)
+    end
+end)()
