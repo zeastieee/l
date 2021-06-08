@@ -1,0 +1,53 @@
+local MouseAnimations = Instance.new("ScreenGui")
+local Background = Instance.new("TextLabel")
+ 
+MouseAnimations.Name = "MouseAnimations"
+MouseAnimations.Parent = game.CoreGui
+
+Background.Name = "Background"
+Background.Parent = MouseAnimations
+Background.BackgroundColor3 = Color3.new(1, 1, 1)
+Background.BackgroundTransparency = 1
+Background.Position = UDim2.new(-1, 0, -1, 0)
+Background.Size = UDim2.new(0, 5000, 0, 5000)
+Background.Text = ""
+
+-- Some things i'd like you to know:
+
+-- 1. The positioning is a little bit off (Depending upon size) and i'm not quite sure how to fix it. + You can adjust it yourself
+-- 2. The bigger the animation is, the longer it takes to vanish.
+-- 3. The creator is monkpro.
+-- 4. I'd suggest you pick a image that has a transparent background for best results. (in my opinion it makes it look more sleek and smooth instead of a big ol box picture)
+-- 5. This is free to use, so use it in all your places or pass it on
+
+
+function onMove(x,y)
+	if x == nil then 
+		print("x = nil") 
+	return 
+	end
+	if y == nil then 
+		print("y = nil") 
+	return 
+	end
+	b = Instance.new("ImageLabel")
+	b.Parent = script.Parent.Parent
+	b.Name = "Animation"
+	b.Size = UDim2.new(0,30,0,30) --this should be set to no lower than 10/no higher than 30
+	b.Position = UDim2.new(0,x,0,y) - UDim2.new(0,b.Size.X.Offset/2,0,b.Size.Y.Offset)
+	b.Image = script.Parent.Parent.ANIMATIONIMAGEHERE.Texture
+	b.BackgroundTransparency = 1
+	s = script.Parent.Animation:clone()
+	s.Parent = b
+	s.Disabled = false
+end
+
+script.Parent.MouseMoved:connect(onMove)
+
+while true do 
+wait()
+script.Parent.Size = script.Parent.Size - UDim2.new(0,1,0,0)
+script.Parent.Size = script.Parent.Size - UDim2.new(0,0,0,1)
+if (script.Parent.Size.X.Offset <= 0) and (script.Parent.Size.Y.Offset <= 0)then script.Parent:Remove() break end
+end
+
