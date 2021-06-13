@@ -19,7 +19,7 @@ TextLabel.BackgroundTransparency = 1
 TextLabel.Position = UDim2.new(0.144112155, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 33, 0, 17)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "darkware | private"
+TextLabel.Text = "private script | zst"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
 TextLabel.TextSize = 14
 
